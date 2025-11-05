@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        body{
+            background-color:whitesmoke;
+        }
+        .new{
+            color: orange;
+            font-size: 20px;
+            text-align: center;
+        }
+        pre{
+            color: blue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+  <p>An image classifier that identifies whether an image is of a <b>Dog</b> or a <b>Cat</b>, while classifying all other images as <b>Unknown</b>, 
+    is a specialized binary classifier with an additional rejection class. This model leverages <b>Supervised Learning</b>, typically using a 
+    <b>Convolutional Neural Network (CNN)</b>, to learn distinct visual patterns associated with dogs and cats. During training, the model is
+     provided with labeled images of dogs, cats, and various unrelated objects labeled as "unknown" to enhance its ability to reject non-target images.
+      During inference, the classifier assigns probabilities for "dog," "cat," and "unknown," based on which it determines the final label. 
+      Implementing such a model in a web application involves integrating the <b>trained model </b> using a <b>backend framework</b> like <b>Flask or Django</b>, 
+      serving the model through an API, and a frontend interface that allows users to upload images and receive classification results.
+       This approach ensures robust, user-friendly interaction while maintaining classification accuracy and security.eep learning-based image classifier using Convolutional Neural Networks (CNNs) for distinguishing between multiple classes of images. The architecture includes several convolutional layers followed by Batch Normalization, Max Pooling, and Dropout layers to prevent overfitting. The model ends with a Global Average Pooling layer to reduce the dimensionality, followed by fully connected (Dense) layers with L2 regularization to further mitigate overfitting.
+
+Data preprocessing includes extensive data augmentation using the ImageDataGenerator class, which applies transformations like rotation, zoom, flip, and brightness adjustment to enhance model generalization. The model is compiled using the Adam optimizer with a low learning rate to ensure stable convergence and categorical cross-entropy loss for multi-class classification. Additionally, the model implements class weights calculated using compute_class_weight() to handle class imbalance effectively.
+
+Training utilizes two key callbacks:</p>
+<!-- <p class="new">Contact Us:</p> <p>919538511023</p>irfanahmedraza123@gmail.com     
+    917019865433     nizampasha218@gmail.com</p>  -->
+</body>
+</html>

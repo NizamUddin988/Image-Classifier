@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developers</title>
+    <style>
+        body{
+            background-color:chartreuse;
+            align-items: center;
+            justify-items: center;
+        }
+        .container{
+              display: flex;
+            flex-direction: row;
+            row-gap: 500px;
+        }
+        .img{
+            margin-top: 2px;
+            border: 2px solid aqua;
+            border-radius: 5%;
+        }
+        h3{
+            font-size: 30px;
+            margin-top: 1px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+     <div class="container">
+    <!-- <img src="developer.png" alt="" height="550" width="500" class="img"> -->
+        <img src="{{ url_for('static', filename='images/developer.png') }}" class="img" alt="Developer"height="550" width="500">
+    </div>
+    <h3>Developer</h3>
+    <marquee style="margin-top: 1.5px;color: #bf0e40;font-size: 23px;background-color: aliceblue;" direction="left">-----------This is <span style="color: #1a1a00;">Nizam Uddin</span>,Welcome to my panel------------</marquee>
+</body>
+</html>

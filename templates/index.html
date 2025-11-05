@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Image Classifier</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    /* background-color: #f0f0f0; */
+    background-image: url("https://img.freepik.com/free-vector/futuristic-white-technology-background_23-2148390336.jpg?semt=ais_hybrid&w=740");
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.head{
+            color:goldenrod; 
+            position: fixed;
+            bottom: 650px;
+            left: 370px;
+            margin-top: 10px;
+            z-index: 1000;
+        
+        }
+
+.container {
+    background-color: #ffffff; 
+    background-image: url("https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?semt=ais_hybrid&w=740");
+    background-size: cover;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    text-align: center;
+    position: relative;
+    bottom:30px;
+    left: 10px;
+    width: 650px;
+    margin-top:200px;
+    z-index: 2px;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+}
+
+.container form {
+    margin-bottom: 20px;
+}
+
+.container input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.container button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container button:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+.uploaded-img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+ .hidden-content {
+            max-height: 0;
+            overflow: hidden;
+            /* background-color: #fff; */
+            padding:0 10px;
+            transition: max-height 0.5s ease, padding 0.5s ease;
+        }
+
+        #toggle {
+            display: none;
+        }
+
+        .toggle-label {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 35px;
+            user-select: none;
+            position: fixed;
+        
+        }
+
+        .toggle-label::after {
+            /* content: '►'; */
+            content: "☰";
+            transition: transform 0.3s;
+            height: 200px;
+        }
+
+        #toggle:checked + .toggle-label::after {
+            /* content: '▼'; */
+            content: "☰";
+            height: 200px;
+        }
+
+        #toggle:checked ~ .hidden-content {
+            max-height: 300px;
+            padding: 10px;
+        }
+        .hide{
+            position: fixed;
+            top: 5px;
+            right:1340px;
+        }
+        b{
+            color: black;
+            font-size:25px;
+        }
+        p{
+            color: black;
+            font-size: 20px;
+        }
+        a{
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+        }
+        li{
+            height: 200px;
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <header><h1 class="head">IMAGE CLASSIFICATION USING MACHINE LEARNING</h1></header>
+    <main>
+    <div class="container">
+        <h1>Image Classifier</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <button type="submit">Upload and Classify</button>>
+        </form>
+
+        {% if filename %}
+        <div class="result">
+            <h2>Prediction: {{ prediction }}</h2>
+            <img src="/uploads/{{ filename }}" alt="Uploaded Image" class="uploaded-img">
+        </div>
+        {% endif %}
+    </div>
+    </main>
+    <div class="hide">
+<input type="checkbox" id="toggle">
+<label for="toggle" class="toggle-label"></label>
+
+<nav class="hidden-content"><br><br>
+   <li> 
+    <a href ="{{ url_for('developers') }}"><img src="{{ url_for('static', filename='images/profile.png') }}" alt="Developer Symbol" width="30" height="30">     Developer</a><br> 
+    <a href ="{{ url_for('setting') }}"><img src="{{ url_for('static', filename='images/setting.png') }}" alt="Setting" width="30" height="30">     Setting</a><br>
+    <a href ="{{ url_for('about') }}"><img src="{{ url_for('static', filename='images/information.png') }}" alt="About" width="30" height="30">     About</a>
+    </li>
+</nav>
+</div>
+</body>
+</html>

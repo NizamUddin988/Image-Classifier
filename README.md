@@ -33,7 +33,7 @@ Developed an Image Classifier website for my Machine Learning project that predi
 
 🚀 Quick Start
 
-##Installation & Setup
+  ##Installation & Setup
 
 1. Clone the repository
 
@@ -43,10 +43,15 @@ Developed an Image Classifier website for my Machine Learning project that predi
 2. Dependencies
 
     pip install -r requirements.txt
+   
     pip install tensorflow
+   
     pip install flask
+   
     pip install opencv-python
+   
     pip install pillow
+   
     pip install numpy
 
 3.Train the model

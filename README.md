@@ -29,7 +29,7 @@ Developed an Image Classifier website for my Machine Learning project that predi
 
 2. Frontend - HTML5,  CSS3 , JavaScript
 
-3.Machine Learning - CNN Architecture, Transfer Learning, Image Preprocessing, Model Optimization
+ 3.Machine Learning - CNN Architecture, Transfer Learning, Image Preprocessing, Model Optimization
 
 🚀 Quick Start
 
@@ -55,6 +55,7 @@ Developed an Image Classifier website for my Machine Learning project that predi
     pip install numpy
 
 3.Train the model
+
   python train_model.py
      
     ##Expected output during training:
